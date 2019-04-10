@@ -18,3 +18,10 @@ class FlyNoWay < FlyBehaviour
     puts "I can't fly."
   end
 end
+
+class FlyRocketPowered < FlyBehaviour
+  
+  def fly
+    puts "I'm flying with a rocket!"
+  end
+end
