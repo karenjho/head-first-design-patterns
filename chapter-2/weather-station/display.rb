@@ -88,3 +88,30 @@ class ForecastDisplay < Display
     end
   end
 end
+
+class HeatIndexDisplay < Display
+
+  attr_accessor :heat_index
+
+  def update(temperature, humidity, _pressure)
+    self.heat_index = calculate_heat_index(temperature.to_f, humidity.to_f)
+    display
+  end
+
+  def display
+    puts "Heat index is #{heat_index.round(5)}"
+  end
+
+  def calculate_heat_index(t, rh)
+    (
+      16.923 + (0.185212 * t) + (5.37941 * rh) - (0.100254 * t * rh) +
+      (0.00941695 * (t * t)) + (0.00728898 * (rh * rh)) +
+      (0.000345372 * (t * t * rh)) - (0.000814971 * (t * rh * rh)) +
+      (0.0000102102 * (t * t * rh * rh)) - (0.000038646 * (t * t * t)) +
+      (0.0000291583 * (rh * rh * rh)) + (0.00000142721 * (t * t * t * rh)) +
+      (0.000000197483 * (t * rh * rh * rh)) -
+      (0.0000000218429 * (t * t * t * rh * rh)) +
+      0.000000000843296 * (t * t * rh * rh * rh)
+    ) - (0.0000000000481975 * (t * t * t * rh * rh * rh))
+  end
+end
