@@ -2,7 +2,7 @@
 
 Code-along in Ruby for the book Head First Design Patterns
 
-## Chapter 1 - Intro to Design Patterns
+## Chapter 1: Strategy Pattern
 
 ### Mini Duck Simulator
 
@@ -23,3 +23,12 @@ $ ruby chapter-1/duck/mini_duck_simulator.rb
 | ---                                                            | ---                                                                     |
 | [character.rb](chapter-1/adventure/character.rb)               | `Character` class and `King`, `Queen`, `Knight`, and `Troll` subclasses |
 | [weapon_behaviour.rb](chapter-1/adventure/weapon_behaviour.rb) | `WeaponBehaviour` interface and weapon behaviour implementation classes |
+
+## Chapter 2: Observer Pattern
+
+### Weather Station
+
+To run the Weather Station:
+```
+$ ruby chapter-2/weather-station/weather_station.rb
+```
