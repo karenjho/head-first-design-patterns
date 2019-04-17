@@ -3,7 +3,7 @@ class Display
 
   def initialize(weather_data)
     @weather_data = weather_data
-    weather_data.register_observer(self)
+    weather_data.add_observer(self)
   end
 
   def update(temperature, humidity, pressure)
